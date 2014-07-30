@@ -1,6 +1,10 @@
 extends layout
 
 block content
+	p Enter a number:
+		form(action="/numbers" method="post")
+			input#userNumber(type="number")
+			button#submitt(type="submit") Submit
 	a#random(href='#') Get Random Numbers
 	ul#numbers
 

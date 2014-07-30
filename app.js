@@ -20,6 +20,18 @@ app.get('/numbers', function(req, res) {
 		])
 })
 
+var array = []
+var total = 0
+app.post('/numbers', function(req, res) {
+	console.log("req.body:", req.body)
+	array.push(req.body)
+
+	total += parseInt(req.body.n)
+	console.log("array:", array)
+	console.log("total:", total)
+	res.send(200, total)
+})
+
 var server = app.listen(3597, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });

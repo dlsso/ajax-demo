@@ -11,4 +11,15 @@ $(function() {
 			}))
 		})
 	})
+
+	$('#submitt').on('click', function(e) {
+
+		e.preventDefault();
+
+		$.post('/numbers', {n:$('#userNumber').val()}, function(total) {
+
+			$('form').append('<p> Total: '+ total )
+
+		})
+	})
 })
